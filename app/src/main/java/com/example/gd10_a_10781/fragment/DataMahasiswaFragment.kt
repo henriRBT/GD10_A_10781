@@ -1,6 +1,7 @@
 package com.example.gd10_a_10781.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -51,13 +52,14 @@ class DataMahasiswaFragment : Fragment() {
                 if (response.isSuccessful){
                     listMahasiswa.clear()
                     response.body()?.let { listMahasiswa.addAll(it.data) }
-                    val adapter = MahasiswaAdapater(listMahasiswa, requireContext())
+                    val adapter = MahasiswaAdapter(listMahasiswa, requireContext())
                     binding.rvData.adapter = adapter
                     adapter.notifyDataSetChanged()
                     binding.progressBar.isVisible = false
                 }
             }
             override fun onFailure(call: Call<ResponseDataMahasiswa>, t: Throwable) {
+                Log.d("apii", t.toString())
             }
         }
         )

@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gd10_a_10781.databinding.ListDataMahasiswaBinding
 
-class  MahasiswaAdapater(
+class  MahasiswaAdapter(
     private val listMahasiswa:ArrayList<MahasiswaData>,
     private val context: Context
-    ): RecyclerView.Adapter<MahasiswaAdapater.MahasiswaViewHolder>() {
+    ): RecyclerView.Adapter<MahasiswaAdapter.MahasiswaViewHolder>() {
         inner class MahasiswaViewHolder(item:ListDataMahasiswaBinding):RecyclerView.ViewHolder(item.root){
             private val binding = item
             fun bind(mahasiswaData: MahasiswaData){
